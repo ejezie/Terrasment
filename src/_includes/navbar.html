@@ -1,0 +1,49 @@
+{% comment %} Lien actuel avec class="active" Nous nous pouvons pas utiliser {%
+link %} dans le "if". Donc il faut écrire le lien manuellement. {% endcomment %}
+
+<nav class="navbar">
+  <div class="nav-wrap">
+    <img
+      src="https://dunk.brickthemes.com/wp-content/uploads/2019/12/logo.png"
+      alt="logo"
+      class="nav-img"
+    />
+    <div class="nav-links">
+      <a href="../accueil.html" class="link">HOME</a>
+      <a href="../service.html" class="link">PROPERTY</a>
+      <a href="../accueil.html" class="link">FEATURES</a>
+      <a href="../contact.html" class="link">PAGES</a>
+      <a href="../accueil.html" class="link">NEWS</a>
+    </div>
+  </div>
+  <div class="dropdown">
+    <button onclick="myFunction()" class="dropbtn">Home</button>
+    <div id="myDropdown" class="dropdown-content">
+      <a href="../accueil.html" class="link">HOME</a>
+      <a href="../accueil.html" class="link">PROPERTY</a>
+      <a href="../accueil.html" class="link">FEATURES</a>
+      <a href="../accueil.html" class="link">PAGES</a>
+      <a href="../accueil.html" class="link">NEWS</a>
+    </div>
+  </div>
+
+  <script>
+    function myFunction() {
+      document.getElementById("myDropdown").classList.toggle("show");
+    }
+
+    // Close the dropdown if the user clicks outside of it
+    window.onclick = function (event) {
+      if (!event.target.matches(".dropbtn")) {
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+          var openDropdown = dropdowns[i];
+          if (openDropdown.classList.contains("show")) {
+            openDropdown.classList.remove("show");
+          }
+        }
+      }
+    };
+  </script>
+</nav>
