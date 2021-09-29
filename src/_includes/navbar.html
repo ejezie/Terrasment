@@ -9,21 +9,25 @@ link %} dans le "if". Donc il faut écrire le lien manuellement. {% endcomment %
       class="nav-img"
     />
     <div class="nav-links">
-      <a href="../accueil.html" class="link">HOME</a>
-      <a href="../service.html" class="link">PROPERTY</a>
-      <a href="../accueil.html" class="link">FEATURES</a>
-      <a href="../contact.html" class="link">PAGES</a>
-      <a href="../accueil.html" class="link">NEWS</a>
+      <a href="{% link accueil.html %}" class="link">HOME</a>
+      <a href="{% link notre-entreprise.html %}" class="link"
+        >Notre entreprise</a
+      >
+      <a href="{% link services.html %}" class="link">services</a>
+      <a href="{% link contact.html %}" class="link">contact</a>
+      <a href="{% link devis.html %}" class="link">devis</a>
     </div>
   </div>
   <div class="dropdown">
     <button onclick="myFunction()" class="dropbtn">Home</button>
     <div id="myDropdown" class="dropdown-content">
-      <a href="../accueil.html" class="link">HOME</a>
-      <a href="../accueil.html" class="link">PROPERTY</a>
-      <a href="../accueil.html" class="link">FEATURES</a>
-      <a href="../accueil.html" class="link">PAGES</a>
-      <a href="../accueil.html" class="link">NEWS</a>
+      <a href="{% link accueil.html %}" class="link">Home</a>
+      <a href="{% link notre-entreprise.html %}" class="link"
+        >Notre entreprise</a
+      >
+      <a href="{% link services.html %}" class="link">services</a>
+      <a href="{% link contact.html %}" class="link">contact</a>
+      <a href="{% link devis.html %}" class="link">devis</a>
     </div>
   </div>
 

@@ -3,50 +3,491 @@ layout: default
 permalink: /devis
 ---
 
-<h1>Devis</h1>
-
-<form class="form" method="post" action="{{ site.data.company.url.notify }}">
-    <input type="hidden" name="lang" value="fr">
-    <input type="hidden" name="type" value="estimate">
-    <input type="hidden" name="website" value="{{ site.data.company.websiteId }}">
-    <input type="hidden" name="redirectUrl" value="{{site.url}}{% link formulaire-succes.html %}">
-    <div class="form-group">
-        <label for="email">Email</label>
-        <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp">
-        <small id="emailHelp" class="form-text text-muted">Nous ne partagerons jamais votre email.</small>
+<div class="service-bg">
+  <h2 class="heading">15/22 Gladstone Street Newport NSW 2106</h2>
+  <div class="service-text">
+    <a href="{% link accueil.html %}">Home</a>
+    <p>></p>
+    <p>Devis</p>
+    <p>></p>
+  </div>
+</div>
+<form
+    id="contactForm"
+    class="mailform off2 header-form"
+    method="post"
+    action="{{ site.data.company.url.notify }}"
+    style="margin-left: 4rem; background-color: rgb(235, 235, 168);"
+  >
+    <input type="hidden" name="lang" value="fr" />
+    <input
+      type="hidden"
+      name="redirectUrl"
+      value="{{site.data.company.url.redirect}}"
+    />
+    <input type="hidden" name="type" value="contact" />
+    <input
+      type="hidden"
+      name="website"
+      value="{{ site.data.company.website }}"
+    />
+    <input type="hidden" name="lang" value="{{ site.data.company.lang }}" />
+    <input type="hidden" name="firstName" value="" />
+    <input
+      type="hidden"
+      name="key"
+      value="{{ site.data.company.recaptcha.server }}"
+    />
+    <div class="button-wrap">
+      <button class="head-btn">BUY</button>
+      <button class="head-btn-two">RENT</button>
     </div>
-    <div class="form-group">
-        <label for="name">Nom</label>
-        <input type="text" class="form-control" id="name" name="name">
-    </div>
-    <div class="form-group">
-        <label for="phone">Téléphone</label>
-        <input type="text" class="form-control" id="phone" name="phone">
-    </div>
-    <div class="form-group">
-        <label for="sujet">Sujet</label>
-        <select class="form-control" id="sujet" name="sujet">
-            <option>Service après-vente</option>
-            <option>Devis</option>
-            <option>Recrutement</option>
-            <option>Autre</option>
-        </select>
-    </div>
-    <div class="form-group">
-        <label>Votre demande est-elle urgente?</label>
-        <div class="form-check">
-            <input class="form-check-input" type="radio" name="urgence" id="urgenceOui" value="oui" checked>
-            <label class="form-check-label" for="urgenceOui">Oui</label>
+    <div class="header-content">
+      <label class="labels" for="suburb">SUBURB</label>
+      <select name="name" id="name" aria-placeholder="Any">
+        <option value="Any" disabled selected>Any</option>
+        <option value="HIGH LAND">HIGH LAND</option>
+        <option value="JAMAL">JAMAL</option>
+        <option value="ARIEL PROP">ARIEL PROP</option>
+        <option value="TSUNAMITE">TSUNAMITE</option>
+        <option value="RADER VADER">C|RADER VADER</option>
+      </select>
+      <div class="select-wrap">
+        <div class="select-content">
+          <label class="labels" for="sub1">PRICE FROM</label>
+          <select name="name" id="name" aria-placeholder="Any">
+            <option value="Any" disabled selected>Any</option>
+            <option value="HIGH LAND">HIGH LAND</option>
+            <option value="JAMAL">JAMAL</option>
+            <option value="ARIEL PROP">ARIEL PROP</option>
+            <option value="TSUNAMITE">TSUNAMITE</option>
+            <option value="RADER VADER">C|RADER VADER</option>
+          </select>
         </div>
-        <div class="form-check">
-            <input class="form-check-input" type="radio" name="urgence" id="urgenceNon" value="non">
-            <label class="form-check-label" for="urgenceNon">Non</label>
+        <div class="select-content">
+          <label class="labels" for="sub1">PRICE TO</label>
+          <select name="name" id="name" aria-placeholder="Any">
+            <option value="Any" disabled selected>Any</option>
+            <option value="HIGH LAND">HIGH LAND</option>
+            <option value="JAMAL">JAMAL</option>
+            <option value="ARIEL PROP">ARIEL PROP</option>
+            <option value="TSUNAMITE">TSUNAMITE</option>
+            <option value="RADER VADER">C|RADER VADER</option>
+          </select>
         </div>
+      </div>
+      <div class="select-wrap">
+        <div class="select-content">
+          <label class="labels" for="sub1">BEDROOMS MIN</label>
+          <select name="name" id="name" aria-placeholder="Any">
+            <option value="Any" disabled selected>Any</option>
+            <option value="HIGH LAND">HIGH LAND</option>
+            <option value="JAMAL">JAMAL</option>
+            <option value="ARIEL PROP">ARIEL PROP</option>
+            <option value="TSUNAMITE">TSUNAMITE</option>
+            <option value="RADER VADER">C|RADER VADER</option>
+          </select>
+        </div>
+        <div class="select-content">
+          <label class="labels" for="sub1">BEDROOMS MAX</label>
+          <select name="name" id="name" aria-placeholder="Any">
+            <option value="Any" disabled selected>Any</option>
+            <option value="HIGH LAND">HIGH LAND</option>
+            <option value="JAMAL">JAMAL</option>
+            <option value="ARIEL PROP">ARIEL PROP</option>
+            <option value="TSUNAMITE">TSUNAMITE</option>
+            <option value="RADER VADER">C|RADER VADER</option>
+          </select>
+        </div>
+      </div>
+      <div class="select-wrap">
+        <div class="select-content">
+          <label class="labels" for="sub1">BATHROOMS</label>
+          <select name="name" id="name" aria-placeholder="Any">
+            <option value="Any" disabled selected>Any</option>
+            <option value="HIGH LAND">HIGH LAND</option>
+            <option value="JAMAL">JAMAL</option>
+            <option value="ARIEL PROP">ARIEL PROP</option>
+            <option value="TSUNAMITE">TSUNAMITE</option>
+            <option value="RADER VADER">C|RADER VADER</option>
+          </select>
+        </div>
+      </div>
+      <div class="g-recaptcha" style="margin-top: 0.5rem"></div>
+      <br />
+      <div
+        id="contact-form-response"
+        style="color: rgb(44, 42, 42); margin-bottom: 1rem"
+      ></div>
+      <div class="checkbox" style="flex-direction: row; align-items: center">
+        <input
+          name="condition"
+          type="checkbox"
+          style="
+            height: 1.5rem;
+            width: 1.5rem;
+            vertical-align: middle;
+            margin-right: 0.5rem;
+          "
+        />
+        <span class="contact_content-form--label" style="font-size: 0.7rem">
+          En utilisant ce formulaire, vous acceptez le stockage et la gestion de
+          vos données par ce site *</span
+        >
+        <i class="fa fa-info-square" aria-hidden="true"></i>
+      </div>
+      <br />
+      <button class="btn" type="submit">SEARCH</button>
     </div>
-
-    <div class="form-group">
-        <label for="commentaire">Commentaire</label>
-        <textarea class="form-control" id="commentaire" rows="3"></textarea>
+  </form>
+<div class="card-wrap">
+  <div class="card">
+    <img
+      src="https://dunk.brickthemes.com/wp-content/uploads/2015/10/bright-cheery-kitchen-in-a-new-home-that-is-very-inviting-to-guest-enjoying-a-cozy-new-9lbZ3Y-600x400.jpg"
+      alt="card-image"
+    />
+    <h3 class="heading2">Lakeview Apartments - 1x1, 2x1, 2x2</h3>
+    <p class="card-text">
+      The City of Rockingham is a seaside location about 50km south of the Perth
+      CBD. Rockingham contains two major shopping districts with...
+    </p>
+    <div class="card-icons">
+      <div class="icon">
+        <img src="./assets/img/double-bed.svg" class="card-icon" alt="icon" />
+        <p>5</p>
+        <div class="card-line"></div>
+      </div>
+      <div class="icon">
+        <img src="./assets/img/bathtub.svg" class="card-icon" alt="icon" />
+        <p>3</p>
+        <div class="card-line"></div>
+      </div>
+      <div class="icon">
+        <img src="./assets/img/car-park.svg" class="card-icon" alt="icon" />
+        <p>4</p>
+        <div class="card-line"></div>
+      </div>
     </div>
-    <button type="submit" class="btn btn-primary">Envoyer</button>
-</form>
+    <h3 class="price">$370,000</h3>
+  </div>
+  <div class="card">
+    <img
+      src="https://dunk.brickthemes.com/wp-content/uploads/2019/07/bernard-hermant-min-600x400.jpg"
+      alt="card-image"
+    />
+    <h3 class="heading2">Bungalow With Garden</h3>
+    <p class="card-text">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent
+      consectetur dolor rutrum elit cursus viverra. Suspendisse mollis arcu nec
+      tellus luctus pharetra....
+    </p>
+    <div class="card-icons">
+      <div class="icon">
+        <img src="./assets/img/double-bed.svg" class="card-icon" alt="icon" />
+        <p>4</p>
+        <div class="card-line"></div>
+      </div>
+      <div class="icon">
+        <img src="./assets/img/bathtub.svg" class="card-icon" alt="icon" />
+        <p>1</p>
+        <div class="card-line"></div>
+      </div>
+      <div class="icon">
+        <img src="./assets/img/car-park.svg" class="card-icon" alt="icon" />
+        <p>2</p>
+        <div class="card-line"></div>
+      </div>
+      <div class="icon">
+        <img
+          src="./assets/img/air-conditioner.svg"
+          class="card-icon"
+          alt="icon"
+        />
+        <div class="card-line"></div>
+      </div>
+    </div>
+    <h3 class="price">POA</h3>
+  </div>
+  <div class="card">
+    <img
+      src="https://dunk.brickthemes.com/wp-content/uploads/2019/07/armin-djuhic-min-600x400.jpg"
+      alt="card-image"
+    />
+    <h3 class="heading2">Property Listing Made Easy!</h3>
+    <p class="card-text">
+      This fantastic property high in Sorrento offers expansive living and space
+      for the whole family. Everything is supersized; bedrooms, bathrooms,
+      offices, games,...
+    </p>
+    <div class="card-icons">
+      <div class="icon">
+        <img src="./assets/img/double-bed.svg" class="card-icon" alt="icon" />
+        <p>3</p>
+        <div class="card-line"></div>
+      </div>
+      <div class="icon">
+        <img src="./assets/img/bathtub.svg" class="card-icon" alt="icon" />
+        <p>2</p>
+        <div class="card-line"></div>
+      </div>
+      <div class="icon">
+        <img src="./assets/img/car-park.svg" class="card-icon" alt="icon" />
+        <p>5</p>
+        <div class="card-line"></div>
+      </div>
+      <div class="icon">
+        <img
+          src="./assets/img/air-conditioner.svg"
+          class="card-icon"
+          alt="icon"
+        />
+        <p>5</p>
+        <div class="card-line"></div>
+      </div>
+      <div class="icon">
+        <img
+          src="./assets/img/swimming-pool.svg"
+          class="card-icon"
+          alt="icon"
+        />
+        <p>5</p>
+        <div class="card-line"></div>
+      </div>
+    </div>
+    <h3 class="price">$9,999</h3>
+  </div>
+</div>
+<div class="card-wrap">
+  <div class="card">
+    <img
+      src="https://dunk.brickthemes.com/wp-content/uploads/2015/10/bright-cheery-kitchen-in-a-new-home-that-is-very-inviting-to-guest-enjoying-a-cozy-new-9lbZ3Y-600x400.jpg"
+      alt="card-image"
+    />
+    <h3 class="heading2">Lakeview Apartments - 1x1, 2x1, 2x2</h3>
+    <p class="card-text">
+      The City of Rockingham is a seaside location about 50km south of the Perth
+      CBD. Rockingham contains two major shopping districts with...
+    </p>
+    <div class="card-icons">
+      <div class="icon">
+        <img src="./assets/img/double-bed.svg" class="card-icon" alt="icon" />
+        <p>5</p>
+        <div class="card-line"></div>
+      </div>
+      <div class="icon">
+        <img src="./assets/img/bathtub.svg" class="card-icon" alt="icon" />
+        <p>3</p>
+        <div class="card-line"></div>
+      </div>
+      <div class="icon">
+        <img src="./assets/img/car-park.svg" class="card-icon" alt="icon" />
+        <p>4</p>
+        <div class="card-line"></div>
+      </div>
+    </div>
+    <h3 class="price">$370,000</h3>
+  </div>
+  <div class="card">
+    <img
+      src="https://dunk.brickthemes.com/wp-content/uploads/2019/07/bernard-hermant-min-600x400.jpg"
+      alt="card-image"
+    />
+    <h3 class="heading2">Bungalow With Garden</h3>
+    <p class="card-text">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent
+      consectetur dolor rutrum elit cursus viverra. Suspendisse mollis arcu nec
+      tellus luctus pharetra....
+    </p>
+    <div class="card-icons">
+      <div class="icon">
+        <img src="./assets/img/double-bed.svg" class="card-icon" alt="icon" />
+        <p>4</p>
+        <div class="card-line"></div>
+      </div>
+      <div class="icon">
+        <img src="./assets/img/bathtub.svg" class="card-icon" alt="icon" />
+        <p>1</p>
+        <div class="card-line"></div>
+      </div>
+      <div class="icon">
+        <img src="./assets/img/car-park.svg" class="card-icon" alt="icon" />
+        <p>2</p>
+        <div class="card-line"></div>
+      </div>
+      <div class="icon">
+        <img
+          src="./assets/img/air-conditioner.svg"
+          class="card-icon"
+          alt="icon"
+        />
+        <div class="card-line"></div>
+      </div>
+    </div>
+    <h3 class="price">POA</h3>
+  </div>
+  <div class="card">
+    <img
+      src="https://dunk.brickthemes.com/wp-content/uploads/2019/07/armin-djuhic-min-600x400.jpg"
+      alt="card-image"
+    />
+    <h3 class="heading2">Property Listing Made Easy!</h3>
+    <p class="card-text">
+      This fantastic property high in Sorrento offers expansive living and space
+      for the whole family. Everything is supersized; bedrooms, bathrooms,
+      offices, games,...
+    </p>
+    <div class="card-icons">
+      <div class="icon">
+        <img src="./assets/img/double-bed.svg" class="card-icon" alt="icon" />
+        <p>3</p>
+        <div class="card-line"></div>
+      </div>
+      <div class="icon">
+        <img src="./assets/img/bathtub.svg" class="card-icon" alt="icon" />
+        <p>2</p>
+        <div class="card-line"></div>
+      </div>
+      <div class="icon">
+        <img src="./assets/img/car-park.svg" class="card-icon" alt="icon" />
+        <p>5</p>
+        <div class="card-line"></div>
+      </div>
+      <div class="icon">
+        <img
+          src="./assets/img/air-conditioner.svg"
+          class="card-icon"
+          alt="icon"
+        />
+        <p>5</p>
+        <div class="card-line"></div>
+      </div>
+      <div class="icon">
+        <img
+          src="./assets/img/swimming-pool.svg"
+          class="card-icon"
+          alt="icon"
+        />
+        <p>5</p>
+        <div class="card-line"></div>
+      </div>
+    </div>
+    <h3 class="price">$9,999</h3>
+  </div>
+</div>
+<div class="card-wrap">
+  <div class="card">
+    <img
+      src="https://dunk.brickthemes.com/wp-content/uploads/2015/10/bright-cheery-kitchen-in-a-new-home-that-is-very-inviting-to-guest-enjoying-a-cozy-new-9lbZ3Y-600x400.jpg"
+      alt="card-image"
+    />
+    <h3 class="heading2">Lakeview Apartments - 1x1, 2x1, 2x2</h3>
+    <p class="card-text">
+      The City of Rockingham is a seaside location about 50km south of the Perth
+      CBD. Rockingham contains two major shopping districts with...
+    </p>
+    <div class="card-icons">
+      <div class="icon">
+        <img src="./assets/img/double-bed.svg" class="card-icon" alt="icon" />
+        <p>5</p>
+        <div class="card-line"></div>
+      </div>
+      <div class="icon">
+        <img src="./assets/img/bathtub.svg" class="card-icon" alt="icon" />
+        <p>3</p>
+        <div class="card-line"></div>
+      </div>
+      <div class="icon">
+        <img src="./assets/img/car-park.svg" class="card-icon" alt="icon" />
+        <p>4</p>
+        <div class="card-line"></div>
+      </div>
+    </div>
+    <h3 class="price">$370,000</h3>
+  </div>
+  <div class="card">
+    <img
+      src="https://dunk.brickthemes.com/wp-content/uploads/2019/07/bernard-hermant-min-600x400.jpg"
+      alt="card-image"
+    />
+    <h3 class="heading2">Bungalow With Garden</h3>
+    <p class="card-text">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent
+      consectetur dolor rutrum elit cursus viverra. Suspendisse mollis arcu nec
+      tellus luctus pharetra....
+    </p>
+    <div class="card-icons">
+      <div class="icon">
+        <img src="./assets/img/double-bed.svg" class="card-icon" alt="icon" />
+        <p>4</p>
+        <div class="card-line"></div>
+      </div>
+      <div class="icon">
+        <img src="./assets/img/bathtub.svg" class="card-icon" alt="icon" />
+        <p>1</p>
+        <div class="card-line"></div>
+      </div>
+      <div class="icon">
+        <img src="./assets/img/car-park.svg" class="card-icon" alt="icon" />
+        <p>2</p>
+        <div class="card-line"></div>
+      </div>
+      <div class="icon">
+        <img
+          src="./assets/img/air-conditioner.svg"
+          class="card-icon"
+          alt="icon"
+        />
+        <div class="card-line"></div>
+      </div>
+    </div>
+    <h3 class="price">POA</h3>
+  </div>
+  <div class="card">
+    <img
+      src="https://dunk.brickthemes.com/wp-content/uploads/2019/07/armin-djuhic-min-600x400.jpg"
+      alt="card-image"
+    />
+    <h3 class="heading2">Property Listing Made Easy!</h3>
+    <p class="card-text">
+      This fantastic property high in Sorrento offers expansive living and space
+      for the whole family. Everything is supersized; bedrooms, bathrooms,
+      offices, games,...
+    </p>
+    <div class="card-icons">
+      <div class="icon">
+        <img src="./assets/img/double-bed.svg" class="card-icon" alt="icon" />
+        <p>3</p>
+        <div class="card-line"></div>
+      </div>
+      <div class="icon">
+        <img src="./assets/img/bathtub.svg" class="card-icon" alt="icon" />
+        <p>2</p>
+        <div class="card-line"></div>
+      </div>
+      <div class="icon">
+        <img src="./assets/img/car-park.svg" class="card-icon" alt="icon" />
+        <p>5</p>
+        <div class="card-line"></div>
+      </div>
+      <div class="icon">
+        <img
+          src="./assets/img/air-conditioner.svg"
+          class="card-icon"
+          alt="icon"
+        />
+        <p>5</p>
+        <div class="card-line"></div>
+      </div>
+      <div class="icon">
+        <img
+          src="./assets/img/swimming-pool.svg"
+          class="card-icon"
+          alt="icon"
+        />
+        <p>5</p>
+        <div class="card-line"></div>
+      </div>
+    </div>
+    <button class="btn">SOLD</button>
+  </div>
+</div>
